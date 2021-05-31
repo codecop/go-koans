@@ -20,17 +20,19 @@ func aboutDefer() {
 	func() {
 		acc = 0
 		defer increment(1)
+		acc = 0
 	}()
 
-	assert(acc == __int__) // defer function will be execute after main function body
+	assert(acc == 1) // defer function will be execute after main function body
 
 	func() {
 		acc = 0
 		defer increment(5)
 		defer decrement(3)
+		acc = 0
 	}()
 
-	assert(acc == __int__) // list of functions also allowed
+	assert(acc == 2) // list of functions also allowed
 
 	func() {
 		defer panicRecover()
@@ -38,6 +40,7 @@ func aboutDefer() {
 		panic("Expected error")
 	}()
 
-	assert(acc == __int__) // executed even in case of panic
+	assert(acc == 1) // executed even in case of panic
 
+	// panic("Expected error")
 }

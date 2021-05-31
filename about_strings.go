@@ -10,7 +10,7 @@ func aboutStrings() {
 
 	assert("smith"[2:] == "ith")  // slicing may omit the end point
 	assert("smith"[:4] == "smit") // or the beginning
-	assert("smith"[2:4] == "it")  // or neither
+	assert("smith"[2:4] == "it")  // or neither // TODO PK nice slicing [:]
 	assert("smith"[:] == "smith") // or both
 
 	assert("smith" == "smith") // they can be compared directly
@@ -25,6 +25,7 @@ func aboutStrings() {
 	assert(fmt.Sprintf("hello %s", "world") == "hello world")         // our old friend sprintf returns
 	assert(fmt.Sprintf("hello \"%s\"", "world") == "hello \"world\"") // quoting is familiar
 	assert(fmt.Sprintf("hello %q", "world") == "hello \"world\"")     // although it can be done more easily
+	// TODO PK printf format %q for quotes.
 
 	assert(fmt.Sprintf("your balance: %d and %0.2f", 3, 4.5589) == "your balance: 3 and 4.56") // "the root of all evil" is actually a misquotation, by the way
 }

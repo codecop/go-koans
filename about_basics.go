@@ -21,7 +21,7 @@ func aboutBasics() {
 	assert(f == 0.0) // for types of all types
 
 	var s string
-	assert(s == "") // both typical or atypical types
+	assert(s == "") // both typical or atypical types // TODO PK empty string ""
 
 	var c struct {
 		x int
